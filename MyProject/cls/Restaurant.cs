@@ -4,9 +4,8 @@ namespace cls
 {
        public class Restaurant
     {
-        public string Name;
-        public string Location;
-        
+        public string Name { get; private set; }
+        public string Location { get; private set; }
 
 
 
