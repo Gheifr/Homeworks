@@ -6,5 +6,9 @@ namespace cls
 {
     class Table
     {
+        public int TblNumber { get; private set; }
+        
+
+
     }
 }

@@ -2,7 +2,13 @@
 
 namespace cls
 {
-    public class Class1
+       public class Restaurant
     {
+        public string Name;
+        public string Location;
+        
+
+
+
     }
 }
