@@ -8,8 +8,9 @@ namespace cls
     {
         public int TblNumber { get; private set; }
         public int Guests { get; private set; }
-        //_order[100]
-        public bool OrderExists{ get; private set; }
+
+        //_order[100] - question regarding whether to use array or collection?
+        public bool OrderExists;
         
 
 
