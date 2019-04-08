@@ -6,7 +6,7 @@ namespace cls
 {
     public class Order
     {
-        public int OrderNumber;
+        public readonly int OrderNumber = SetOrderNum();
         public string Employee;
         
 
@@ -15,6 +15,11 @@ namespace cls
             return "0";
         }
 
+        internal static int SetOrderNum()
+        {
+            int lastOrderNum = 1; //get last order number from storage
+            return lastOrderNum + 1;
+        }
 
 
     }

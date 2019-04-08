@@ -8,8 +8,8 @@ namespace cls
     {
         public int Visits;
         public string LoyaltyLevel;
-
-        private void UpdateLoyaltyLevel(int visitsCount)
+        
+        public void UpdateLoyaltyLevel(int visitsCount)
         {
             if (visitsCount > 49)
                 LoyaltyLevel = "VIP";
