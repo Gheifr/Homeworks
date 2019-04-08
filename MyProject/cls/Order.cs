@@ -4,11 +4,16 @@ using System.Text;
 
 namespace cls
 {
-    class Order
+    public class Order
     {
         public int OrderNumber;
-        public string OrderList;
-        public int OrderPax;
+        public string Employee;
+        
+
+        public string FormOrder()
+        {
+            return "0";
+        }
 
 
 
