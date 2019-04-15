@@ -9,17 +9,17 @@ namespace cls
         public string Position { get; private set; }
         public int AccessLevel { get; private set; }
 
-        private double Salary;
+        private double _salary;
 
         public int userID { get; private set; }
 
-        public void SetSalary(double Salary)
+        public void SetSalary(double salary)
         {
-            this.Salary = Salary;
+            this._salary = salary;
         }
-        public double SetSalary()
+        public double GetSalary()
         {
-            return Salary;
+            return _salary;
         }
 
     }
