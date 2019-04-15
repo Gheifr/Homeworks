@@ -4,5 +4,6 @@ namespace ifcs
 {
     public class Class1
     {
+
     }
 }
