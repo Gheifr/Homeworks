@@ -21,6 +21,11 @@ namespace cls
                 _loyaltyLevel = "Regular";
         }
 
+        public string GetLoyaltyLevel()
+        {
+            return this._loyaltyLevel;
+        }
+
 
     }
 }

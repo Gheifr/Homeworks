@@ -18,7 +18,7 @@ namespace cls
         public string GetAge()
         {
             System.DateTime dateNow = DateTime.Now;
-            return ""+(dateNow.Year - dateOfBirth.Year);
+            return (dateNow.Year - dateOfBirth.Year).ToString();
         }
 
     }
