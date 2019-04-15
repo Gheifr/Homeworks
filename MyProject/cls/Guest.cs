@@ -7,18 +7,18 @@ namespace cls
     public class Guest:Person
     {
         public int Visits;
-        public string LoyaltyLevel;
+        private string _loyaltyLevel;
         
         public void UpdateLoyaltyLevel(int visitsCount)
         {
             if (visitsCount > 49)
-                LoyaltyLevel = "VIP";
+                _loyaltyLevel = "VIP";
             else if (visitsCount > 29)
-                LoyaltyLevel = "Platinum";
+                _loyaltyLevel = "Platinum";
             else if (visitsCount > 19)
-                LoyaltyLevel = "Gold";
+                _loyaltyLevel = "Gold";
             else
-                LoyaltyLevel = "Regular";
+                _loyaltyLevel = "Regular";
         }
 
 
