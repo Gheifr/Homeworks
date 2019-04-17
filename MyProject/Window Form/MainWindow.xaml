@@ -15,13 +15,85 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="225"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-            
+        
+        <!--Date and time labels-->
+        <Grid Grid.Row ="0">
+            <Label BorderBrush="Black" BorderThickness="0.5" Margin="5" Content="Date and time" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        
+        <!--Order list label-->
+        <Grid Grid.Row="1" Grid.RowSpan="4">
+            <Label BorderBrush="Black" BorderThickness="0.5" Margin="5" Content="Order list will be here"/>
+        </Grid>
+        
+        <!--Table buttons-->
+        <Grid  Grid.Row="1" Grid.Column="1">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Table 1"/>
+        </Grid>
+        <Grid  Grid.Row="1" Grid.Column="2">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Table 2"/>
+        </Grid>
+        <Grid  Grid.Row="1" Grid.Column="3">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Table 3"/>
+        </Grid>
+        <Grid  Grid.Row="1" Grid.Column="4">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Table 4"/>
+        </Grid>
+        
+        <!--food buttons-->
+        <Grid  Grid.Row="2" Grid.Column="1">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Food 1"/>
+        </Grid>
+        <Grid  Grid.Row="3" Grid.Column="1">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Food 2"/>
+        </Grid>
+        <Grid  Grid.Row="4" Grid.Column="1">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Food 3"/>
+        </Grid>
+
+        <!--Beverage buttons-->
+        <Grid  Grid.Row="2" Grid.Column="2">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Beverage 1"/>
+        </Grid>
+        <Grid  Grid.Row="3" Grid.Column="2">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Beverage 2"/>
+        </Grid>
+        <Grid  Grid.Row="4" Grid.Column="2">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Beverage 3"/>
+        </Grid>
+
+        <!--Service buttons-->
+        <Grid  Grid.Row="2" Grid.Column="3">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Service"/>
+        </Grid>
+        <Grid  Grid.Row="3" Grid.Column="3">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Print Check"/>
+        </Grid>
+        <Grid  Grid.Row="4" Grid.Column="3">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Cancel"/>
+        </Grid>
+
+        <!--Payment buttons-->
+        <Grid  Grid.Row="2" Grid.Column="4">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Cash"/>
+        </Grid>
+        <Grid  Grid.Row="3" Grid.Column="4">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Credit Card"/>
+        </Grid>
+        <Grid  Grid.Row="4" Grid.Column="4">
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Bank Transfer"/>
+        </Grid>
+
+        <!--Other field-->
+        <Grid  Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="5">
+            <Label Content="Some other shit" BorderBrush="Black" BorderThickness="0.5" Margin="5"/>
+        </Grid>
     </Grid>
 </Window>
