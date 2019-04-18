@@ -35,17 +35,24 @@
         
         <!--Table buttons-->
         <Grid  Grid.Row="1" Grid.Column="1">
-            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Table 1"/>
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
+            </Button>
         </Grid>
         <Grid  Grid.Row="1" Grid.Column="2">
-            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Table 2"/>
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
+            </Button>
         </Grid>
         <Grid  Grid.Row="1" Grid.Column="3">
-            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Table 3"/>
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
+            </Button>
         </Grid>
         <Grid  Grid.Row="1" Grid.Column="4">
-            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Table 4"/>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="220" Margin="-472,0,0,0" VerticalAlignment="Top" Width="631"/>
+            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
+            </Button>
         </Grid>
         
         <!--food buttons-->
