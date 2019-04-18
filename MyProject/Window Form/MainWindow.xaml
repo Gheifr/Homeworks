@@ -25,7 +25,7 @@
         
         <!--Date and time labels-->
         <Grid Grid.Row ="0">
-            <Label BorderBrush="Black" BorderThickness="0.5" Margin="5" Content="Date and time" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label BorderBrush="Black" BorderThickness="0.5" Margin="1" Content="Date and time" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         
         <!--Order list label-->
