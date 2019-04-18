@@ -45,6 +45,7 @@
         </Grid>
         <Grid  Grid.Row="1" Grid.Column="4">
             <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Content="Table 4"/>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="220" Margin="-472,0,0,0" VerticalAlignment="Top" Width="631"/>
         </Grid>
         
         <!--food buttons-->
