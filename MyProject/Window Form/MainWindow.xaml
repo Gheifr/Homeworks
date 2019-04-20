@@ -30,76 +30,94 @@
         
         <!--Order list label-->
         <Grid Grid.Row="1" Grid.RowSpan="4">
-            <Label BorderBrush="Black" BorderThickness="0.5" Margin="5" Content="Order list will be here"/>
+            <ListBox Margin="5" BorderBrush="Black" BorderThickness="0.7" Name="lbOrder" SelectionMode="Multiple">
+                <ListBoxItem Content="There"/>
+                <ListBoxItem Content="↓"/>
+                <ListBoxItem Content="will be an order"/>
+            </ListBox>
         </Grid>
         
         <!--Table buttons-->
-        <Grid  Grid.Row="1" Grid.Column="1">
-            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="4*"/>
-                        <RowDefinition Height="1*"/>
-                    </Grid.RowDefinitions>
-                    <Grid Grid.Row ="0">
-                        <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
-                    </Grid>
-                    <Grid Grid.Row ="1">
-                        <Label Content="Table 1" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="Bold"/>
-                    </Grid>
-                </Grid> 
-            </Button>
-        </Grid>
-        
-        <Grid  Grid.Row="1" Grid.Column="2">
-            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="4*"/>
-                        <RowDefinition Height="1*"/>
-                    </Grid.RowDefinitions>
-                    <Grid Grid.Row ="0">
-                        <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
-                    </Grid>
-                    <Grid Grid.Row ="1">
-                        <Label Content="Table 2" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="Bold"/>
-                    </Grid>
+        <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4">
+            <Label BorderThickness="0.5" Margin="5" BorderBrush="Black">
+            <Grid Name="grTables">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid  Grid.Column="0">
+                    <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row ="0">
+                                <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
+                            </Grid>
+                            <Grid Grid.Row ="1">
+                                <Label Content="Table 1" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="Bold"/>
+                            </Grid>
+                        </Grid>
+                    </Button>
                 </Grid>
-            </Button>
-        </Grid>
-        
-        <Grid  Grid.Row="1" Grid.Column="3">
-            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="4*"/>
-                        <RowDefinition Height="1*"/>
-                    </Grid.RowDefinitions>
-                    <Grid Grid.Row ="0">
-                        <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
-                    </Grid>
-                    <Grid Grid.Row ="1">
-                        <Label Content="Table 3" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="Bold"/>
-                    </Grid>
+
+                <Grid  Grid.Column="1">
+                    <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row ="0">
+                                <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
+                            </Grid>
+                            <Grid Grid.Row ="1">
+                                <Label Content="Table 2" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="Bold"/>
+                            </Grid>
+                        </Grid>
+                    </Button>
                 </Grid>
-            </Button>
-        </Grid>
-        
-        <Grid  Grid.Row="1" Grid.Column="4">
-            <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="4*"/>
-                        <RowDefinition Height="1*"/>
-                    </Grid.RowDefinitions>
-                    <Grid Grid.Row ="0">
-                        <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
-                    </Grid>
-                    <Grid Grid.Row ="1">
-                        <Label Content="Table 4" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="Bold"/>
-                    </Grid>
+
+                <Grid  Grid.Column="2">
+                    <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row ="0">
+                                <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
+                            </Grid>
+                            <Grid Grid.Row ="1">
+                                <Label Content="Table 3" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="Bold"/>
+                            </Grid>
+                        </Grid>
+                    </Button>
                 </Grid>
-            </Button>
+
+                <Grid  Grid.Column="3">
+                    <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row ="0">
+                                <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
+                            </Grid>
+                            <Grid Grid.Row ="1">
+                                <Label Content="Table 4" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="Bold"/>
+                            </Grid>
+                        </Grid>
+
+                    </Button>
+                </Grid>
+            </Grid>
+            </Label>
         </Grid>
         
         <!--food buttons-->
