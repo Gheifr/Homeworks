@@ -4,7 +4,9 @@ using System.Text;
 
 namespace cls
 {
-    interface SaveRecord
+    interface ISaveRecord
     {
+        void Save(string record);
+
     }
 }
