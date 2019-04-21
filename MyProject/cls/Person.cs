@@ -12,8 +12,8 @@ namespace cls
     public string Address{ get; private set; }
     public string Email{ get; private set; }
 
-    private DateTime dateOfBirth;
-    public string Age { get; private set; }
+    private DateTime dateOfBirth { get;  set; }
+        public string Age { get; private set; }
     
         public string GetAge()
         {

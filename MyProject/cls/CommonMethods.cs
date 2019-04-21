@@ -6,15 +6,16 @@ namespace cls
 {
     class CommonMethods
     {
-        public static void GetOrder(Table table)
+        public static void GetOrder(Tbl table)
         {
             if (table.OrderExists)
             {
-                foreach (string ord in table.Order)
-                {
-                    //lbOrder.Additem
-                }
+                //foreach (string ord in table.Order)
+                //{
+                //    //lbOrder.Additem
+                //}
             }
         }
+        
     }
 }

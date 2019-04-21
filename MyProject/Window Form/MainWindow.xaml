@@ -5,7 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Window_Form"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        xmlns:viewmodel="clr-namespace:Window_Form.ViewModel"
+        Title="My Cafe" Height="600" Width="800">
+
+    <Window.DataContext>
+        <viewmodel:MainWindowViewModel/>
+    </Window.DataContext>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -25,15 +31,15 @@
         
         <!--Date and time labels-->
         <Grid Grid.Row ="0">
-            <Label BorderBrush="Black" BorderThickness="0.5" Margin="1" Content="Date and time" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label  HorizontalAlignment="Center" VerticalAlignment="Center" Name="lbTime"/>
         </Grid>
         
         <!--Order list label-->
         <Grid Grid.Row="1" Grid.RowSpan="4">
             <ListBox Margin="5" BorderBrush="Black" BorderThickness="0.7" Name="lbOrder" SelectionMode="Multiple">
-                <ListBoxItem Content="There"/>
+                <!--<ListBoxItem Content="There"/>
                 <ListBoxItem Content="↓"/>
-                <ListBoxItem Content="will be an order"/>
+                <ListBoxItem Content="will be an order"/>-->
             </ListBox>
         </Grid>
         
@@ -48,15 +54,15 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Grid  Grid.Column="0">
-                    <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                <Grid  Grid.Column="0" >
+                        <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Command="{Binding Path=GetTableOrder1}" CommandParameter="1">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="4*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row ="0">
-                                <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
+                                    <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
                             </Grid>
                             <Grid Grid.Row ="1">
                                 <Label Content="Table 1" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="Bold"/>

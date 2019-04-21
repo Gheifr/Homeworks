@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\PropertyChangedViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -99,6 +102,12 @@
     <EmbeddedResource Include="Sources\Pictures\table-23-256x256.png" />
     <EmbeddedResource Include="Sources\Pictures\table-4-100x100.png" />
     <EmbeddedResource Include="Sources\Pictures\table-4-256x256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\cls\cls.csproj">
+      <Project>{72934a58-7452-4b71-93f2-928004961e31}</Project>
+      <Name>cls</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

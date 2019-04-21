@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +21,24 @@ namespace Window_Form
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
+            var timer = new System.Windows.Threading.DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.IsEnabled = true;
+            timer.Tick += (o, t) => { lbTime.Content = DateTime.Now.ToString(); };
+            timer.Start();
             InitializeComponent();
-        }
-    }
 
+            
+
+        }
+
+        
+           
+        
+    }
+    
     
 }
