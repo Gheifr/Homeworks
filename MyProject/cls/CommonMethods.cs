@@ -12,7 +12,7 @@ namespace cls
             {
                 foreach (string ord in table.Order)
                 {
-                    lbOrder.Additem
+                    //lbOrder.Additem
                 }
             }
         }
