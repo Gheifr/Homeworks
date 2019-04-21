@@ -17,28 +17,42 @@ namespace Window_Form.ViewModel
     {
 
         Tbl Table1 = new Tbl(1);
-        Tbl Table2 = new Tbl(2);
-        Tbl Table3 = new Tbl(3);
+        
+        
 
         public MainWindowViewModel()
         {
             GetTableOrder1 = new RelayCommand(param => HandleGetTableOrder1());
-        
+            ShowOrder = new RelayCommand(param => HandleShowOrder());
         }
 
+        private string HandleShowOrder()
+        {
+            return Table1.Order;
+        }
 
-        private void HandleGetTableOrder1()
+        public string HandleGetTableOrder1()
             {
+            if (Table1.Order == null)
+            {
+                MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
 
-
-
-
-            //MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()}");
-            
+                Table1.AddOrderItem("Empty by now");
+               
+                return Table1.Order;
             }
+
+            MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
+       
+            return Table1.Order;
+            }
+        
+
+
         public ICommand GetTableOrder1 { get; private set; }
         public ICommand ShowOrder { get; private set; }
 
+        
     }
     
 }

@@ -36,11 +36,7 @@
         
         <!--Order list label-->
         <Grid Grid.Row="1" Grid.RowSpan="4">
-            <ListBox Margin="5" BorderBrush="Black" BorderThickness="0.7" Name="lbOrder" SelectionMode="Multiple">
-                <!--<ListBoxItem Content="There"/>
-                <ListBoxItem Content="↓"/>
-                <ListBoxItem Content="will be an order"/>-->
-            </ListBox>
+            <Label Name="lbOrder" Content="{Binding Path=ShowOrder}"/>
         </Grid>
         
         <!--Table buttons-->
@@ -48,10 +44,10 @@
             <Label BorderThickness="0.5" Margin="5" BorderBrush="Black">
             <Grid Name="grTables">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <Grid  Grid.Column="0" >

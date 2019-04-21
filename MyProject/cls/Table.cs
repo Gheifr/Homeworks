@@ -10,8 +10,9 @@ namespace cls
         public int Guests { get; private set; }
 
         private int orderNumber = SetOrderNum();
-        public List<string> Order = null;
-        
+
+        public string Order { get; private set; }
+
         public bool OrderExists { get; private set; }
 
         public string Employee { get; private set; }
@@ -20,6 +21,7 @@ namespace cls
         public Tbl(int tableNumber)
         {
             this.TblNumber = tableNumber;
+            this.Order = null;
         }
 
         internal static int SetOrderNum()
@@ -33,14 +35,17 @@ namespace cls
             return this.TblNumber;
         }
 
-        public List<string> GetOrder()
+        public string GetOrder()
         {
             return this.Order;
         }
 
         public void AddOrderItem(string _item)
-        {     
-            this.Order.Add(_item);
+        {
+            if (this.Order == null)
+                this.Order += _item;
+            else
+                this.Order += "|"+_item;
         }
     }
 }
