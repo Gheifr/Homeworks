@@ -4,7 +4,7 @@ using System.Text;
 
 namespace cls
 {
-    public class Tbl
+    public class Tbl:ISaveRecord
     {
         public int TblNumber { get; private set; }
         public int Guests { get; private set; }
@@ -43,9 +43,20 @@ namespace cls
         public void AddOrderItem(string _item)
         {
             if (this.Order == null)
+            {
                 this.Order += _item;
+                Save($"User {this.Employee} added record {this.Order}");
+            }
             else
-                this.Order += "|"+_item;
+            {
+                this.Order += "|" + _item;
+                Save($"User {this.Employee} added record {this.Order}");
+            }
+        }
+
+        public void Save(string _record)
+        {
+            //some System.IO.TextWriter will write all changes to the file
         }
     }
 }

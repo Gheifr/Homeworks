@@ -36,7 +36,7 @@
         
         <!--Order list label-->
         <Grid Grid.Row="1" Grid.RowSpan="4">
-            <Label Name="lbOrder" Content="{Binding Path=ShowOrder}"/>
+            <Label Name="lbOrder" Content="{Binding Path=Content}"/>
         </Grid>
         
         <!--Table buttons-->

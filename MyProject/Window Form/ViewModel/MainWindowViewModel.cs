@@ -35,19 +35,31 @@ namespace Window_Form.ViewModel
             {
             if (Table1.Order == null)
             {
-                MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
+                //MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
 
                 Table1.AddOrderItem("Empty by now");
-               
+                Content = Table1.GetOrder();
                 return Table1.Order;
             }
 
-            MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
-       
+            //MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
+            Content = Table1.GetOrder();
             return Table1.Order;
             }
-        
 
+        private string _orderText;
+        public string Content
+        {
+            get
+            {
+                return _orderText;
+            }
+            set
+            {
+                _orderText = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         public ICommand GetTableOrder1 { get; private set; }
         public ICommand ShowOrder { get; private set; }
