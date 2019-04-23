@@ -24,11 +24,11 @@ namespace Window_Form
         
         public MainWindow()
         {
-            var timer = new System.Windows.Threading.DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 1);
-            timer.IsEnabled = true;
-            timer.Tick += (o, t) => { lbTime.Content = DateTime.Now.ToString(); };
-            timer.Start();
+            //var timer = new System.Windows.Threading.DispatcherTimer();
+            //timer.Interval = new TimeSpan(0, 0, 1);
+            //timer.IsEnabled = true;
+            //timer.Tick += (o, t) => { lbTime.Content = DateTime.Now.ToString(); };
+            //timer.Start();
             InitializeComponent();
             
             

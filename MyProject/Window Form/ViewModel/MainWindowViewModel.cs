@@ -26,12 +26,12 @@ namespace Window_Form.ViewModel
             ShowOrder = new RelayCommand(param => HandleShowOrder());
         }
 
-        private string HandleShowOrder()
+        private List<string> HandleShowOrder()
         {
             return Table1.Order;
         }
 
-        public string HandleGetTableOrder1()
+        public List<string> HandleGetTableOrder1()
             {
             if (Table1.Order == null)
             {
@@ -47,16 +47,16 @@ namespace Window_Form.ViewModel
             return Table1.Order;
             }
 
-        private string orderText;
-        public string Content
+        internal List<string> _orderText;
+        public List<string> Content
         {
             get
             {
-                return orderText;
+                return _orderText;
             }
             set
             {
-                orderText = value;
+                _orderText = value;
                 NotifyPropertyChanged();
             }
         }

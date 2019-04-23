@@ -11,17 +11,27 @@ namespace cls
 
         private int orderNumber = SetOrderNum();
 
-        public string Order { get; private set; }
-
         public bool OrderExists { get; private set; }
 
         public string Employee { get; private set; }
 
+        private List<string> order= new List<string>();
+
+        public List<string> Order
+        {
+            get
+            {
+                return order;
+            }
+            set
+            {
+                order = value;
+            }
+        }
 
         public Tbl(int tableNumber)
         {
             this.TblNumber = tableNumber;
-            this.Order = null;
         }
 
         internal static int SetOrderNum()
@@ -35,22 +45,22 @@ namespace cls
             return this.TblNumber;
         }
 
-        public string GetOrder()
+        public List<string> GetOrder()
         {
-            return this.Order;
+            return this.order;
         }
 
         public void AddOrderItem(string _item)
         {
-            if (this.Order == null)
+            if (order == null)
             {
-                this.Order += _item;
+                order.Add("Nothing entered");
                 Save($"User {this.Employee} added record {this.Order}");
             }
             else
             {
-                this.Order += "|" + _item;
-                Save($"User {this.Employee} added record {this.Order}");
+                order.Add(_item);
+                Save($"User {this.Employee} added record {this.order}");
             }
         }
 
