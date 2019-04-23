@@ -47,16 +47,16 @@ namespace Window_Form.ViewModel
             return Table1.Order;
             }
 
-        private string _orderText;
+        private string orderText;
         public string Content
         {
             get
             {
-                return _orderText;
+                return orderText;
             }
             set
             {
-                _orderText = value;
+                orderText = value;
                 NotifyPropertyChanged();
             }
         }
