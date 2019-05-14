@@ -36,8 +36,8 @@
         
         <!--Order list label-->
         <Grid Grid.Row="1" Grid.RowSpan="4">
-            <!--<Label Name="lbOrder" Content="{Binding Path=Content}"/>-->
-            <ListBox x:Name="lbOrder" lbOrder.ItemsSource ="{Binding Path=Content}" />
+            <Label Name="lbOrder" Content="{Binding Path=Content}"/>
+            <!--<ListBox>-->
         </Grid>
         
         <!--Table buttons-->
