@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 
 namespace cls
@@ -11,7 +13,8 @@ namespace cls
 
         private int orderNumber = SetOrderNum();
 
-        public string Order { get; private set; }
+        public ObservableCollection<string> Order = new ObservableCollection<string>();
+
 
         public bool OrderExists { get; private set; }
 
@@ -37,21 +40,15 @@ namespace cls
 
         public string GetOrder()
         {
-            return this.Order;
+            return Order.ToList;
         }
 
         public void AddOrderItem(string _item)
         {
-            if (this.Order == null)
-            {
-                this.Order += _item;
+            
+                Order.Add(_item);
                 Save($"User {this.Employee} added record {this.Order}");
-            }
-            else
-            {
-                this.Order += "|" + _item;
-                Save($"User {this.Employee} added record {this.Order}");
-            }
+
         }
 
         public void Save(string _record)

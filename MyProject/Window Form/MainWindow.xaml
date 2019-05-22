@@ -51,72 +51,72 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid  Grid.Column="0" >
-                        <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" Command="{Binding Path=GetTableOrder1}" CommandParameter="1">
+                    <ToggleButton BorderBrush="Black" BorderThickness="0.5" Margin="15" Command="{Binding Path=GetTableOrder1}" CommandParameter="1">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="4*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row ="0">
-                                    <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
+                                    <Image Source="Sources\Pictures\table-4-100x100.png"/>
                             </Grid>
                             <Grid Grid.Row ="1">
                                 <Label Content="Table 1" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="Bold"/>
                             </Grid>
                         </Grid>
-                    </Button>
+                    </ToggleButton>
                 </Grid>
 
                 <Grid  Grid.Column="1">
-                    <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                        <ToggleButton BorderBrush="Black" BorderThickness="0.5" Margin="15" >
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="4*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row ="0">
-                                <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
+                                <Image Source="Sources\Pictures\table-4-100x100.png"/>
                             </Grid>
                             <Grid Grid.Row ="1">
                                 <Label Content="Table 2" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="Bold"/>
                             </Grid>
                         </Grid>
-                    </Button>
+                    </ToggleButton>
                 </Grid>
 
                 <Grid  Grid.Column="2">
-                    <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                        <ToggleButton BorderBrush="Black" BorderThickness="0.5" Margin="15" >
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="4*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row ="0">
-                                <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
+                                <Image Source="Sources\Pictures\table-4-100x100.png"/>
                             </Grid>
                             <Grid Grid.Row ="1">
                                 <Label Content="Table 3" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="Bold"/>
                             </Grid>
                         </Grid>
-                    </Button>
+                    </ToggleButton>
                 </Grid>
 
                 <Grid  Grid.Column="3">
-                    <Button BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                        <ToggleButton BorderBrush="Black" BorderThickness="0.5" Margin="15" >
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="4*"/>
                                 <RowDefinition Height="1*"/>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row ="0">
-                                <Image Source="D:\Homeworks\MyProject\Window Form\Sources\Pictures\table-4-100x100.png"/>
+                                <Image Source="Sources\Pictures\table-4-100x100.png"/>
                             </Grid>
                             <Grid Grid.Row ="1">
                                 <Label Content="Table 4" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" FontWeight="Bold"/>
                             </Grid>
                         </Grid>
 
-                    </Button>
+                    </ToggleButton>
                 </Grid>
             </Grid>
             </Label>
