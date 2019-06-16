@@ -14,7 +14,6 @@ namespace C3L2
 
         public Queue()
         {
-
         }
         public Queue(int itemsQauntity)
         {
@@ -72,7 +71,6 @@ namespace C3L2
                     return true;
                 } 
             }
-
             return false;
         }
 
