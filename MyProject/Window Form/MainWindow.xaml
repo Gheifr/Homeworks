@@ -51,7 +51,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid  Grid.Column="0" >
-                    <ToggleButton BorderBrush="Black" BorderThickness="0.5" Margin="15" Command="{Binding Path=GetTableOrder1}" CommandParameter="1">
+                    <ToggleButton BorderBrush="Black" BorderThickness="0.5" Margin="15" Command="{Binding Path=GetTableOrder1}">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="4*"/>
@@ -68,7 +68,7 @@
                 </Grid>
 
                 <Grid  Grid.Column="1">
-                        <ToggleButton BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                        <ToggleButton BorderBrush="Black" BorderThickness="0.5" Margin="15" Command="{Binding Path=GetTableOrder2}">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="4*"/>
@@ -85,7 +85,7 @@
                 </Grid>
 
                 <Grid  Grid.Column="2">
-                        <ToggleButton BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                        <ToggleButton BorderBrush="Black" BorderThickness="0.5" Margin="15" Command="{Binding Path=GetTableOrder3}">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="4*"/>
@@ -102,7 +102,7 @@
                 </Grid>
 
                 <Grid  Grid.Column="3">
-                        <ToggleButton BorderBrush="Black" BorderThickness="0.5" Margin="15" >
+                        <ToggleButton BorderBrush="Black" BorderThickness="0.5" Margin="15" Command="{Binding Path=GetTableOrder4}">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="4*"/>
