@@ -12,15 +12,12 @@ using System.Reflection;
 using cls;
 using System.Collections.ObjectModel;
 using System.Windows.Controls.Primitives;
+using System.Windows.Controls;
 
 namespace Window_Form.ViewModel
 {
     public class MainWindowViewModel : PropertyChangedViewModel
     {
-        public delegate void TblChanged(object sender);
-
-        public event TblChanged ActiveTblChanged;
-
         Tbl Table1 = new Tbl(1);
 
         public MainWindowViewModel()
@@ -30,10 +27,6 @@ namespace Window_Form.ViewModel
             GetTableOrder2 = new RelayCommand(param => HandleGetTableOrder2());
             GetTableOrder3 = new RelayCommand(param => HandleGetTableOrder3());
             GetTableOrder4 = new RelayCommand(param => HandleGetTableOrder4());
-            
-           
-
-
 
         }
 
@@ -123,7 +116,13 @@ namespace Window_Form.ViewModel
         public ICommand GetTableOrder3 { get; private set; }
         public ICommand GetTableOrder4 { get; private set; }
         
-        
+        private void ActiveTblChanged(object sender)
+        {
+            foreach(Control c in sender.Parent)
+            {
+
+            }
+        }
     }
     
 }
