@@ -10,6 +10,8 @@ using System.Windows;
 using System.Windows.Documents;
 using System.Reflection;
 using cls;
+using System.Collections.ObjectModel;
+using System.Windows.Controls.Primitives;
 
 namespace Window_Form.ViewModel
 {
@@ -17,8 +19,6 @@ namespace Window_Form.ViewModel
     {
 
         Tbl Table1 = new Tbl(1);
-        
-        
 
         public MainWindowViewModel()
         {
@@ -26,29 +26,29 @@ namespace Window_Form.ViewModel
             ShowOrder = new RelayCommand(param => HandleShowOrder());
         }
 
-        private string HandleShowOrder()
+        public ObservableCollection<string> HandleShowOrder()
         {
             return Table1.Order;
         }
-
-        public string HandleGetTableOrder1()
+        
+        public void HandleGetTableOrder1()
             {
-            if (Table1.Order == null)
+            if (Table1.Order.Count == 0)
             {
                 //MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
 
                 Table1.AddOrderItem("Empty by now");
-                Content = Table1.GetOrder();
-                return Table1.Order;
+                Content = Table1.Order;
+                
             }
 
             //MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
-            Content = Table1.GetOrder();
-            return Table1.Order;
+            Content = Table1.Order;
+            
             }
 
-        private string _orderText;
-        public string Content
+        private ObservableCollection<string> _orderText;
+        public ObservableCollection<string> Content
         {
             get
             {

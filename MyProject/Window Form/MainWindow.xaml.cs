@@ -29,6 +29,7 @@ namespace Window_Form
             timer.IsEnabled = true;
             timer.Tick += (o, t) => { lbTime.Content = DateTime.Now.ToString(); };
             timer.Start();
+            
             InitializeComponent();
             
             
