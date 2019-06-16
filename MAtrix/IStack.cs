@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace C3L2
 {
-    interface IStack
+    public interface IStack<T> : IEnumerable<T>
     {
+
+
     }
 }
