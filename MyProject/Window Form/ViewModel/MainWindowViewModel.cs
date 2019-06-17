@@ -42,8 +42,8 @@ namespace Window_Form.ViewModel
             }
 
             Content = Table1.Order;
-            
-            }
+            ActiveTblChanged(this);
+        }
 
         public void HandleGetTableOrder4()
         {
@@ -56,7 +56,7 @@ namespace Window_Form.ViewModel
             }
 
             Content = Table1.Order;
-
+            ActiveTblChanged(this);
         }
         public void HandleGetTableOrder2()
         {
@@ -70,7 +70,7 @@ namespace Window_Form.ViewModel
             }
 
             Content = Table1.Order;
-
+            ActiveTblChanged(this);
         }
         public void HandleGetTableOrder3()
         {
@@ -83,7 +83,7 @@ namespace Window_Form.ViewModel
             }
 
             Content = Table1.Order;
-
+            ActiveTblChanged(this);
         }
 
         private ObservableCollection<string> _orderText;
@@ -107,7 +107,7 @@ namespace Window_Form.ViewModel
         
         private void ActiveTblChanged(object sender)
         {
-            //loop through toggle buttons, switch off all except the pressed one, didn't find prompt solution yet
+            //loop through toggle buttons, switch off all except the pressed one, didn't find solution yet
         }
 
         
