@@ -40,7 +40,7 @@
         </Grid>
         
         <!--Table buttons-->
-        <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4">
+        <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" x:Name="ToggleButtonGrid">
             <Label BorderThickness="0.5" Margin="5" BorderBrush="Black">
             <Grid Name="grTables">
                 <Grid.ColumnDefinitions>

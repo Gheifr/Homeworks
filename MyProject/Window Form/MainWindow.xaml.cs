@@ -21,7 +21,8 @@ namespace Window_Form
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        public object eleToggleButtonGrid;
+
         public MainWindow()
         {
             var timer = new System.Windows.Threading.DispatcherTimer();
@@ -29,7 +30,9 @@ namespace Window_Form
             timer.IsEnabled = true;
             timer.Tick += (o, t) => { lbTime.Content = DateTime.Now.ToString(); };
             timer.Start();
-            
+
+            eleToggleButtonGrid = this.ToggleButtonGrid;
+
             InitializeComponent();
             
             
@@ -37,9 +40,8 @@ namespace Window_Form
         }
 
         
-           
-        
     }
-    
-    
 }
+    
+    
+

@@ -13,6 +13,8 @@ using cls;
 using System.Collections.ObjectModel;
 using System.Windows.Controls.Primitives;
 using System.Windows.Controls;
+using System.Windows.Media;
+
 
 namespace Window_Form.ViewModel
 {
@@ -27,42 +29,32 @@ namespace Window_Form.ViewModel
             GetTableOrder2 = new RelayCommand(param => HandleGetTableOrder2());
             GetTableOrder3 = new RelayCommand(param => HandleGetTableOrder3());
             GetTableOrder4 = new RelayCommand(param => HandleGetTableOrder4());
-
         }
-
-       
         
         public void HandleGetTableOrder1()
             {
             if (Table1.Order.Count == 0)
             {
-                //MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
-                //ToggleButton btn = sender as ToggleButton;
                 Table1.AddOrderItem("Empty by now");
                 Content = Table1.Order;
                 ActiveTblChanged(this);
 
             }
 
-            //MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
             Content = Table1.Order;
             
             }
-
-       
 
         public void HandleGetTableOrder4()
         {
             if (Table1.Order.Count == 0)
             {
-                //MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
 
                 Table1.AddOrderItem("Empty by now");
                 Content = Table1.Order;
                 ActiveTblChanged(this);
             }
 
-            //MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
             Content = Table1.Order;
 
         }
@@ -70,14 +62,13 @@ namespace Window_Form.ViewModel
         {
             if (Table1.Order.Count == 0)
             {
-                //MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
+                
 
                 Table1.AddOrderItem("Empty by now");
                 Content = Table1.Order;
                 ActiveTblChanged(this);
             }
 
-            //MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
             Content = Table1.Order;
 
         }
@@ -85,14 +76,12 @@ namespace Window_Form.ViewModel
         {
             if (Table1.Order.Count == 0)
             {
-                //MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
-
+               
                 Table1.AddOrderItem("Empty by now");
                 Content = Table1.Order;
                 ActiveTblChanged(this);
             }
 
-            //MessageBox.Show($"Bingo! This table number is {Table1.GetTblNum()} \nOrder is: {Table1.GetOrder()}");
             Content = Table1.Order;
 
         }
@@ -118,11 +107,11 @@ namespace Window_Form.ViewModel
         
         private void ActiveTblChanged(object sender)
         {
-            foreach(Control c in sender.Parent)
-            {
-
-            }
+            //loop through toggle buttons, switch off all except the pressed one, didn't find prompt solution yet
         }
+
+        
+       
     }
     
 }
