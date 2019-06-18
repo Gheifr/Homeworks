@@ -8,6 +8,9 @@ namespace cls
 {
     public class Tbl:ISaveRecord
     {
+
+       
+
         public int TblNumber { get; private set; }
         public int Guests { get; private set; }
 
@@ -24,7 +27,6 @@ namespace cls
         public Tbl(int tableNumber)
         {
             this.TblNumber = tableNumber;
-            this.Order = null;
         }
 
         internal static int SetOrderNum()
@@ -38,17 +40,26 @@ namespace cls
             return this.TblNumber;
         }
 
-        public string GetOrder()
+        public ObservableCollection<string> GetOrder()
         {
-            return Order.ToList;
+            return Order;
         }
 
         public void AddOrderItem(string _item)
         {
-            
-                Order.Add(_item);
+            if (Order.Count == 1)
+            {
+                if (Order[0] == "Empty by now")
+                {
+                    Order[0] = _item;
+                }
+                else
+                {
+                    Order.Add(_item);
+                }
                 Save($"User {this.Employee} added record {this.Order}");
-
+            }
+            Order.Add(_item);
         }
 
         public void Save(string _record)
