@@ -20,16 +20,25 @@ namespace Window_Form.ViewModel
 {
     public class MainWindowViewModel : PropertyChangedViewModel
     {
+
+        public delegate void TblChanged(object sender);
+        public event TblChanged ActiveTblChanged;
+
         Tbl Table1 = new Tbl(1);
+        Tbl Table2 = new Tbl(2);
+        Tbl Table3 = new Tbl(3);
+        Tbl Table4 = new Tbl(4);
 
         public MainWindowViewModel()
         {
+            ActiveTblChanged += ChangeActiveTbl;
 
             GetTableOrder1 = new RelayCommand(param => HandleGetTableOrder1());
             GetTableOrder2 = new RelayCommand(param => HandleGetTableOrder2());
             GetTableOrder3 = new RelayCommand(param => HandleGetTableOrder3());
             GetTableOrder4 = new RelayCommand(param => HandleGetTableOrder4());
 
+            
         }
         
         public void HandleGetTableOrder1()
@@ -39,7 +48,6 @@ namespace Window_Form.ViewModel
                 Table1.AddOrderItem("Empty by now");
                 Content = Table1.Order;
                 ActiveTblChanged(this);
-
             }
 
             Content = Table1.Order;
@@ -48,7 +56,7 @@ namespace Window_Form.ViewModel
 
         public void HandleGetTableOrder4()
         {
-            if (Table1.Order.Count == 0)
+            if (Table4.Order.Count == 0)
             {
 
                 Table1.AddOrderItem("Empty by now");
@@ -56,21 +64,21 @@ namespace Window_Form.ViewModel
                 ActiveTblChanged(this);
             }
 
-            Content = Table1.Order;
+            Content = Table4.Order;
             ActiveTblChanged(this);
         }
         public void HandleGetTableOrder2()
         {
-            if (Table1.Order.Count == 0)
+            if (Table2.Order.Count == 0)
             {
                 
 
                 Table1.AddOrderItem("Empty by now");
-                Content = Table1.Order;
+                Content = Table2.Order;
                 ActiveTblChanged(this);
             }
 
-            Content = Table1.Order;
+            Content = Table2.Order;
             ActiveTblChanged(this);
         }
         public void HandleGetTableOrder3()
@@ -78,16 +86,17 @@ namespace Window_Form.ViewModel
             if (Table1.Order.Count == 0)
             {
                
-                Table1.AddOrderItem("Empty by now");
-                Content = Table1.Order;
+                Table3.AddOrderItem("Empty by now");
+                Content = Table3.Order;
                 ActiveTblChanged(this);
             }
 
-            Content = Table1.Order;
+            Content = Table3.Order;
             ActiveTblChanged(this);
         }
 
         private ObservableCollection<string> _orderText;
+
         public ObservableCollection<string> Content
         {
             get
