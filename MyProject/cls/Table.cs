@@ -24,6 +24,8 @@ namespace cls
         public string Employee { get; private set; }
 
 
+        public long OrderId { get; set; }
+
         public Tbl(int tableNumber)
         {
             this.TblNumber = tableNumber;
