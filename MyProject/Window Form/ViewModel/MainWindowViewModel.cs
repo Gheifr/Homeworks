@@ -29,6 +29,7 @@ namespace Window_Form.ViewModel
             GetTableOrder2 = new RelayCommand(param => HandleGetTableOrder2());
             GetTableOrder3 = new RelayCommand(param => HandleGetTableOrder3());
             GetTableOrder4 = new RelayCommand(param => HandleGetTableOrder4());
+
         }
         
         public void HandleGetTableOrder1()
@@ -105,7 +106,7 @@ namespace Window_Form.ViewModel
         public ICommand GetTableOrder3 { get; private set; }
         public ICommand GetTableOrder4 { get; private set; }
         
-        private void ActiveTblChanged(object sender)
+        private void ChangeActiveTbl(object sender)
         {
             //loop through toggle buttons, switch off all except the pressed one, didn't find solution yet
         }
