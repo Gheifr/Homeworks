@@ -8,6 +8,9 @@ namespace cls
 {
     public class Tbl:ISaveRecord
     {
+
+       
+
         public int TblNumber { get; private set; }
         public int Guests { get; private set; }
 
