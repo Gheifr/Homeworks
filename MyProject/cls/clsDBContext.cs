@@ -8,6 +8,10 @@ namespace cls
     class ClsDBContext : DbContext
     {
 
+        public ClsDBContext()
+            : base("DbConnection")
+        { }
 
+        public DbSet<string> Entities { get; set; }
     }
 }

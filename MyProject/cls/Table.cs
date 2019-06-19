@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using static cls.Tbl;
 
 namespace cls
 {
     public class Tbl:ISaveRecord
     {
-
+        public delegate void OrderChange(string change);
        
+        public event OrderChange OrderChanged;
 
         public int TblNumber { get; private set; }
         public int Guests { get; private set; }
-
-        private int orderNumber = SetOrderNum();
 
         public ObservableCollection<string> Order = new ObservableCollection<string>();
 
@@ -24,18 +24,15 @@ namespace cls
         public string Employee { get; private set; }
 
 
-        public long OrderId { get; set; }
+        private long orderId { get; set; }
 
         public Tbl(int tableNumber)
         {
             this.TblNumber = tableNumber;
+            OrderChanged += Save; //is this a good idea to subscribe to event when instance of a class is created?
         }
 
-        internal static int SetOrderNum()
-        {
-            int lastOrderNum = 1; //get last order number from storage
-            return lastOrderNum + 1;
-        }
+       
 
         public int GetTblNum()
         {
@@ -54,19 +51,29 @@ namespace cls
                 if (Order[0] == "Empty by now")
                 {
                     Order[0] = _item;
+                    OrderChanged(_item);
                 }
                 else
                 {
                     Order.Add(_item);
+                    OrderChanged(_item);
                 }
-                Save($"User {this.Employee} added record {this.Order}");
+                
             }
             Order.Add(_item);
+            OrderChanged(_item);
         }
 
         public void Save(string _record)
         {
-            //some System.IO.TextWriter will write all changes to the file
+
+            using (ClsDBContext db = new ClsDBContext())
+            {
+                db.Entities.Add(_record);
+                db.SaveChanges();
+            }
+            
+            
         }
     }
 }
