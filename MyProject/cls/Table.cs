@@ -21,18 +21,14 @@ namespace cls
 
         public bool OrderExists { get; private set; }
 
-        public string Employee { get; private set; }
-
-
-        private long orderId { get; set; }
+        internal long _orderId { get;  set; }
 
         public Tbl(int tableNumber)
         {
             this.TblNumber = tableNumber;
-            OrderChanged += Save; //is this a good idea to subscribe to event when instance of a class is created?
+            _orderId++;
+            OrderChanged += SaveChangesToOrder; //is this a good idea to subscribe to event when instance of a class is created?
         }
-
-       
 
         public int GetTblNum()
         {
@@ -64,16 +60,30 @@ namespace cls
             OrderChanged(_item);
         }
 
-        public void Save(string _record)
+        public void SaveChangesToOrder(string _record)
         {
 
             using (ClsDBContext db = new ClsDBContext())
             {
-                db.Entities.Add(_record);
+                db.Entities.Add($" {DateTime.Now}: Item {(char)34}{_record}{(char)34} was added to order No {_orderId}");
                 db.SaveChanges();
             }
             
-            
+        }
+
+        public void ShowOrderChanges(long orderID)
+        {
+            using (ClsDBContext db = new ClsDBContext())
+            {
+                string num = orderID.ToString(); 
+                foreach(string line in db.Entities)
+                {
+                    if (line.Substring(line.Length -num.Length, num.Length) == num)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+            }
         }
     }
 }
