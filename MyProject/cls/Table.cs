@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Windows;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using static cls.Tbl;
+using System.Timers;
 
 namespace cls
 {
@@ -17,16 +20,23 @@ namespace cls
         public int Guests { get; private set; }
 
         public ObservableCollection<string> Order = new ObservableCollection<string>();
-
-
+        
         public bool OrderExists { get; private set; }
 
         internal long _orderId { get;  set; }
+
+        private System.Timers.Timer timeOpened;
 
         public Tbl(int tableNumber)
         {
             this.TblNumber = tableNumber;
             _orderId++;
+
+            timeOpened = new System.Timers.Timer(7200000);
+            timeOpened.Interval = 7200000; // do I need to set this additionaly if the timer is already created for some time?
+            timeOpened.Elapsed += markOutstandingTable;
+            timeOpened.AutoReset = false;
+
             OrderChanged += SaveChangesToOrder; //is this a good idea to subscribe to event when instance of a class is created?
         }
 
@@ -48,16 +58,22 @@ namespace cls
                 {
                     Order[0] = _item;
                     OrderChanged(_item);
+                    if (timeOpened.Enabled == false && Order[0] != "Empty by now")
+                        timeOpened.Enabled = true; //timer is enabled when some order is added, no need to use it with blank order
                 }
                 else
                 {
                     Order.Add(_item);
                     OrderChanged(_item);
+                    if (timeOpened.Enabled == false)
+                        timeOpened.Enabled = true;
                 }
                 
             }
             Order.Add(_item);
             OrderChanged(_item);
+            if (timeOpened.Enabled == false)
+                timeOpened.Enabled = true;
         }
 
         public void SaveChangesToOrder(string _record)
@@ -84,6 +100,11 @@ namespace cls
                     }
                 }
             }
+        }
+
+        private void markOutstandingTable(object sender, ElapsedEventArgs e)
+        {
+            //when table is open for more than two hours - it will be marked with red color
         }
     }
 }
