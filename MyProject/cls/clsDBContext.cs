@@ -12,6 +12,6 @@ namespace cls
             : base("DbConnection")
         { }
 
-        public DbSet<string> Entities { get; set; }
+        public DbSet<OrderCls> Entities { get; set; }
     }
 }

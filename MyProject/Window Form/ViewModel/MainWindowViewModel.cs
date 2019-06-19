@@ -37,7 +37,6 @@ namespace Window_Form.ViewModel
             GetTableOrder2 = new RelayCommand(param => HandleGetTableOrder2());
             GetTableOrder3 = new RelayCommand(param => HandleGetTableOrder3());
             GetTableOrder4 = new RelayCommand(param => HandleGetTableOrder4());
-
             
         }
         
@@ -59,8 +58,8 @@ namespace Window_Form.ViewModel
             if (Table4.Order.Count == 0)
             {
 
-                Table1.AddOrderItem("Empty by now");
-                Content = Table1.Order;
+                Table4.AddOrderItem("Empty by now");
+                Content = Table4.Order;
                 ActiveTblChanged(this);
             }
 
@@ -73,7 +72,7 @@ namespace Window_Form.ViewModel
             {
                 
 
-                Table1.AddOrderItem("Empty by now");
+                Table2.AddOrderItem("Empty by now");
                 Content = Table2.Order;
                 ActiveTblChanged(this);
             }
@@ -83,7 +82,7 @@ namespace Window_Form.ViewModel
         }
         public void HandleGetTableOrder3()
         {
-            if (Table1.Order.Count == 0)
+            if (Table3.Order.Count == 0)
             {
                
                 Table3.AddOrderItem("Empty by now");

@@ -65,7 +65,8 @@ namespace cls
 
             using (ClsDBContext db = new ClsDBContext())
             {
-                db.Entities.Add($" {DateTime.Now}: Item {(char)34}{_record}{(char)34} was added to order No {_orderId}");
+                OrderCls orderRecord = new OrderCls(DateTime.Now, _orderId, _record);
+                db.Entities.Add(orderRecord);
                 db.SaveChanges();
             }
             
@@ -75,10 +76,10 @@ namespace cls
         {
             using (ClsDBContext db = new ClsDBContext())
             {
-                string num = orderID.ToString(); 
-                foreach(string line in db.Entities)
+                ; 
+                foreach(OrderCls line in db.Entities)
                 {
-                    if (line.Substring(line.Length -num.Length, num.Length) == num)
+                    if (line.id == orderID)
                     {
                         Console.WriteLine(line);
                     }
