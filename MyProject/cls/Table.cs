@@ -81,7 +81,7 @@ namespace cls
                 {
                     if (line.id == orderID)
                     {
-                        Console.WriteLine(line);
+                        Console.WriteLine(line.ToString());
                     }
                 }
             }
