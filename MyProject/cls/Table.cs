@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using static cls.Tbl;
 
 namespace cls
@@ -27,7 +28,7 @@ namespace cls
         {
             this.TblNumber = tableNumber;
             _orderId++;
-            OrderChanged += SaveChangesToOrder; //is this a good idea to subscribe to event when instance of a class is created?
+            OrderChanged += PutChangesToDBAsync; //is this a good idea to subscribe to event when instance of a class is created?
         }
 
         public int GetTblNum()
@@ -54,10 +55,15 @@ namespace cls
                     Order.Add(_item);
                     OrderChanged(_item);
                 }
-                
             }
             Order.Add(_item);
             OrderChanged(_item);
+        }
+
+
+        public async void PutChangesToDBAsync(string _record)
+        {
+            await Task.Run(() => SaveChangesToOrder(_record));
         }
 
         public void SaveChangesToOrder(string _record)
@@ -69,7 +75,6 @@ namespace cls
                 db.Entities.Add(orderRecord);
                 db.SaveChanges();
             }
-            
         }
 
         public void ShowOrderChanges(long orderID)
