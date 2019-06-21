@@ -60,7 +60,6 @@ namespace cls
             OrderChanged(_item);
         }
 
-
         public async void PutChangesToDBAsync(string _record)
         {
             await Task.Run(() => SaveChangesToOrder(_record));
