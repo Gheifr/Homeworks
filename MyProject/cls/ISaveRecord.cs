@@ -6,7 +6,7 @@ namespace cls
 {
     interface ISaveRecord
     {
-        void Save(string record);
+        void SaveChangesToOrder(string record);
 
     }
 }
